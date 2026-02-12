@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <!-- ⚡ SEO Meta Tags -->
+    <title>SHAFT TECH | Premium Web Development & Digital Solutions</title>
+    <meta name="description" content="SHAFT TECH crafts high-performance, responsive websites. View our portfolio including edemastores, perfectplumbingug, and luxury brands. Get a free quote via WhatsApp.">
+    <meta name="keywords" content="web development Uganda, responsive design, ecommerce, portfolio, SHAFT TECH, custom websites, Kampala developer">
+    <meta name="author" content="SHAFT TECH">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://shafttech.ug">
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="SHAFT TECH - Web Development That Converts">
+    <meta property="og:description" content="Explore live projects: e-commerce, furniture stores, electronics & more. Let’s build your next digital product.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shafttech.ug">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1200">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SHAFT TECH | Web Development Portfolio">
+    <!-- Font & Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts: Premium, clean typeface -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- PREMIUM DESIGN SYSTEM ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafbfc;
+            color: #111827;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        /* ---------- CUSTOM SCROLLBAR ---------- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+        
+        /* ---------- VIDEO HERO ---------- */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #heroVideo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            will-change: transform, opacity, filter;
+            transition: transform 0.1s ease-out, filter 0.2s ease, opacity 0.2s ease;
+            z-index: 0;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 0 20px;
+            transform: translateY(0);
+            transition: transform 0.2s ease;
+        }
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .hero-content .accent {
+            color: #60a5fa;
+            border-bottom: 4px solid #3b82f6;
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+        .hero-content p {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        .btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(59, 131, 246, 0.151);
+        }
+        .btn:hover {
+            background: #2564eb25;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -5px rgba(37, 100, 235, 0);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+            margin-left: 16px;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: #111;
+        }
+        
+        /* ---------- STICKY NAV (logo image) ---------- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            z-index: 100;
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+        /* IMAGE LOGO - replaced text with high-quality tech logo */
+        .logo-img {
+            height: 48px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+        .nav-links a {
+            margin-left: 32px;
+            text-decoration: none;
+            color: #1f2937;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .nav-links .contact-btn {
+            background: #3b82f6;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
+        }
+        .nav-links .contact-btn:hover {
+            background: #2563eb;
+            color: white;
+        }
+        
+        /* ---------- LAYOUT ---------- */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+        .section-sub {
+            color: #6b7280;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 48px;
+        }
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        
+        /* ---------- PORTFOLIO GRID WITH IMAGES (unsplash placeholders - each project unique) ---------- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 28px;
+        }
+        .portfolio-item {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+            transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+            border: 1px solid rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 45px -15px rgba(59,130,246,0.2);
+            border-color: #bfdbfe;
+        }
+        /* Portfolio images — each project gets distinct, relevant image (high-quality Unsplash) */
+        .portfolio-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        /* semi-transparent overlay for icon readability */
+        .portfolio-img::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        .portfolio-img i {
+            position: relative;
+            z-index: 2;
+            background: rgba(0,0,0,0.4);
+            padding: 16px;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .portfolio-info {
+            padding: 24px;
+            flex: 1;
+        }
+        .portfolio-info h3 {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .portfolio-info h3 i {
+            color: #10b981;
+            font-size: 1rem;
+        }
+        .portfolio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            font-weight: 600;
+            color: #3b82f6;
+            text-decoration: none;
+            border-bottom: 1.5px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .portfolio-link:hover {
+            border-bottom-color: #3b82f6;
+        }
+        .domain-badge {
+            font-size: 0.7rem;
+            background: #f3f4f6;
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: #4b5563;
+            font-weight: 400;
+        }
+        
+        /* ---------- CONTACT CARD ---------- */
+        .contact-card {
+            background: white;
+            border-radius: 32px;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .contact-info {
+            flex: 1 1 300px;
+        }
+        .contact-info h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #111827;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #1f2937;
+        }
+        .contact-detail i {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3b82f6;
+            font-size: 1.3rem;
+        }
+        .inquiry-form {
+            flex: 1 1 350px;
+            background: #f9fafb;
+            padding: 32px;
+            border-radius: 24px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border 0.2s, box-shadow 0.2s;
+            background: white;
+        }
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59,130,246,0.1);
+        }
+        .whatsapp-submit {
+            background: #25D366;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: background 0.2s, transform 0.1s;
+            cursor: pointer;
+        }
+        .whatsapp-submit:hover {
+            background: #20bd5a;
+            transform: scale(1.02);
+        }
+        
+        /* ---------- FLOATING ACTION BUTTONS (FAB) - color errors fixed: black bg, proper brand colors) ---------- */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 999;
+        }
+        .fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgb(0, 0, 0);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: white;  /* all icons white */
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            position: relative;
+        }
+        .fab:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        /* FIXED: Brand-accurate colors, no black background except tiktok uses black bg with white icon */
+        .fab-wa { background: #25D366; }  /* WhatsApp green */
+        .fab-fb { background: #1877F2; }  /* Facebook blue */
+        .fab-tt { background: #000000; }  /* TikTok black bg, white icon */
+        .fab-call { background: #3b82f6; } /* phone blue */
+        .fab i { 
+            font-size: 1.8rem; 
+            color: white; /* pure white for all icons */
+        }
+        /* Tooltip */
+        .fab::after {
+            content: attr(data-label);
+            position: absolute;
+            right: 70px;
+            background: #1f2937;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+        .fab:hover::after {
+            opacity: 1;
+        }
+        
+        /* ---------- FOOTER with image logo instead of gradient text ---------- */
+        footer {
+            background: #0b1120;
+            color: #9ca3af;
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .footer-logo-img {
+            height: 60px;
+            width: auto;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1); /* makes logo white for dark footer */
+        }
+        .footer-social a {
+            color: #9ca3af;
+            margin: 0 12px;
+            font-size: 1.6rem;
+            transition: color 0.2s;
+        }
+        .footer-social a:hover {
+            color: white;
+        }
+        
+        /* ---------- MOBILE RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 12px; }
+            .nav-links a { margin: 0 12px; }
+            .hero-content .btn { display: block; margin: 10px auto; width: 80%; }
+            .btn-outline { margin-left: auto; }
+            .contact-card { padding: 28px; }
+            .fab-container { bottom: 20px; right: 20px; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ✅ STICKY NAVIGATION - PREMIUM (IMAGE LOGO) -->
+<nav>
+    <!-- Image logo: modern tech brand, white label style on dark, we use a sleek SVG/PNG alternative -->
+    <img src="logo.jpg" alt="SHAFT TECH" class="logo-img" style="height: 100px; width: auto;">
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#portfolio">Work</a>
+        <a href="#contact" class="contact-btn">Inquiry</a>
+    </div>
+</nav>
+
+<!-- ✅ HERO SECTION - MP4 VIDEO -->
+<section id="home" class="hero">
+    <video id="heroVideo" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200">
+        <source src="w.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <span class="badge" style="background: rgba(255,255,255,0.15); color: white;">⚡ Since 2023</span>
+        <h1>We build <span class="accent">digital</span> that works.</h1>
+        <p>Premium web development for stores, brands & startups — Used by 20+ happy clients.</p>
+        <div>
+            <a href="#portfolio" class="btn">✨ View portfolio</a>
+            <a href="#contact" class="btn btn-outline">📲 Start project</a>
+        </div>
+    </div>
+</section>
+
+<!-- ✅ SHOWCASING ALL CLIENT WEBSITES (each with unique background image) -->
+<div class="container" id="portfolio">
+    <div style="text-align: center;">
+        <span class="badge">📱 15+ LIVE PROJECTS</span>
+        <h2 class="section-title">Websites we crafted</h2>
+        <p class="section-sub">From e‑commerce to luxury brands — each site is conversion‑focused & responsive.</p>
+    </div>
+    
+    <div class="portfolio-grid">
+        <!-- Each portfolio item has a distinct high-quality Unsplash image matching the industry, plus Font Awesome icon overlay. All live URLs from brief. -->
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&q=80');"><i class="fas fa-store"></i></div><div class="portfolio-info"><h3>Edema Stores <i class="fas fa-check-circle" style="color:#3b82f6;"></i></h3><span class="domain-badge">www.edemastores.com</span><a href="https://www.edemastores.com" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80');"><i class="fas fa-wrench"></i></div><div class="portfolio-info"><h3>Perfect Plumbing UG</h3><span class="domain-badge">www.perfectplumbingug.com</span><a href="https://www.perfectplumbingug.com" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&q=80');"><i class="fas fa-clock"></i></div><div class="portfolio-info"><h3>Jamal Classic Watches</h3><span class="domain-badge">jamalclassicwatches.store</span><a href="https://jamalclassicwatches.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80');"><i class="fas fa-couch"></i></div><div class="portfolio-info"><h3>Senono Furniture</h3><span class="domain-badge">www.ssenonofurniture.store</span><a href="https://www.ssenonofurniture.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80');"><i class="fas fa-tools"></i></div><div class="portfolio-info"><h3>Brivud Aluminium Works</h3><span class="domain-badge">brivud-aluminium-works.store</span><a href="https://brivud-aluminium-works.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&q=80');"><i class="fas fa-code"></i></div><div class="portfolio-info"><h3>DELUX BIO DIGESTER</h3><span class="domain-badge">mockup-1.github.io/DELU BIO DIGESTER</span><a href="https://mockup-1.github.io/try-this-website/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&q=80');"><i class="fas fa-tshirt"></i></div><div class="portfolio-info"><h3>Fashion Mockup</h3><span class="domain-badge">mockup-1.github.io/fashion</span><a href="https://mockup-1.github.io/fashion/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=600&q=80');"><i class="fas fa-chair"></i></div><div class="portfolio-info"><h3>Almar Furniture</h3><span class="domain-badge">almarfurniture.store</span><a href="https://almarfurniture.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('afrishop.jpg');"><i class="fas fa-shopping-bag"></i></div><div class="portfolio-info"><h3>Afri Shop</h3><span class="domain-badge">www.afrishop.biz</span><a href="https://www.afrishop.biz" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80');"><i class="fas fa-laptop"></i></div><div class="portfolio-info"><h3>Shaft386 TECH</h3><span class="domain-badge">shaft386.github.io/Hh</span><a href="https://shaft386.github.io/Hh/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80');"><i class="fas fa-user"></i></div><div class="portfolio-info"><h3>Client Project</h3><span class="domain-badge">shaft386.github.io/client-</span><a href="https://shaft386.github.io/client-/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&q=80');"><i class="fas fa-birthday-cake"></i></div><div class="portfolio-info"><h3>Cake Clinic</h3><span class="domain-badge">shaft386.github.io/CAKE-CLINIC</span><a href="https://shaft386.github.io/CAKE-CLINIC/#cakes" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=600&q=80');"><i class="fas fa-plug"></i></div><div class="portfolio-info"><h3>JEMA ELECTRONICS</h3><span class="domain-badge">shaft386.github.io/JEMA-ELECTRONICS</span><a href="https://shaft386.github.io/JEMA-ELECTRONICS/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80');"><i class="fas fa-cubes"></i></div><div class="portfolio-info"><h3>CCC Project</h3><span class="domain-badge">shaft386.github.io/ccc</span><a href="https://shaft386.github.io/ccc/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('cake\ ways.png');"><i class="fas fa-birthday-cake"></i></div><div class="portfolio-info"><h3>Cake Ways UG</h3><span class="domain-badge">www.cakewaysug.store</span><a href="https://www.cakewaysug.store" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80');"><i class="fas fa-home"></i></div><div class="portfolio-info"><h3>Ticbere Estates</h3><span class="domain-badge">www.ticberestates.site</span><a href="https://www.ticberestates.site" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+    </div>
+</div>
+
+<!-- ✅ CONTACT & INQUIRY - DIRECT TO WHATSAPP -->
+<div class="container" id="contact">
+    <div style="text-align: center;">
+        <span class="badge">📞 GET IN TOUCH</span>
+        <h2 class="section-title">Let’s build something great</h2>
+        <p class="section-sub">Your inquiry goes directly to our WhatsApp. Fast replies, usually < 1 hour.</p>
+    </div>
+    
+    <div class="contact-card">
+        <div class="contact-info">
+            <h3>SHAFT TECH</h3>
+            <div class="contact-detail"><i class="fas fa-phone-alt"></i> <span>+256 709 835204</span></div>
+            <div class="contact-detail"><i class="fas fa-envelope"></i> <span>nshaft386@gmail.com</span></div>
+            <div class="contact-detail"><i class="fab fa-whatsapp"></i> <span>WhatsApp Business</span></div>
+            <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span>Kampala, Uganda</span></div>
+            <p style="margin-top: 24px; font-style: italic; color: #4b5563;">“Sweet moments start here — we also built Cake Clinic.”</p>
+        </div>
+        
+        <div class="inquiry-form">
+            <h3 style="margin-bottom: 24px; font-weight: 700;">Quick quote</h3>
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="project" placeholder="Project type (e.g. E-commerce)">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="3" placeholder="Tell us about your project..." required></textarea>
+                </div>
+                <button type="submit" class="whatsapp-submit">
+                    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ FLOATING ACTION BUTTONS: Facebook, TikTok, WhatsApp, Call - COLORS FIXED -->
+<div class="fab-container">
+    <a href="https://www.tiktok.com/@shafttech?is_from_webapp=1&sender_device=pc" target="_blank" class="fab fab-tt" data-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.facebook.com/share/1TXMo8mJfg/?mibextid=wwXIfr" target="_blank" class="fab fab-fb" data-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://wa.me/256709835204?text=Hi%20SHAFT%20TECH%2C%20I%20need%20a%20website!" target="_blank" class="fab fab-wa" data-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+256709835204" class="fab fab-call" data-label="Call now"><i class="fas fa-phone-alt"></i></a>
+</div>
+
+<!-- ✅ FOOTER WITH IMAGE LOGO (white version) -->
+<footer>
+    <div class="footer-content">
+        <!-- Image logo in footer, inverted to white for dark background -->
+        <img src="https://placehold.co/180x54/0b1120/white?text=SHAFT+TECH&font=montserrat" alt="SHAFT TECH" class="footer-logo-img" style="height: 60px; width: auto; filter: brightness(0) invert(1);">
+        <p style="max-width: 600px; margin: 0 auto 30px;">Engineering digital experiences that elevate brands. SEO-optimized, lightning fast, and designed to convert.</p>
+        <div class="footer-social" style="display: flex; gap: 24px; justify-content: center; font-size: 1.6rem; margin-bottom: 30px;">
+            <a href="https://www.tiktok.com/@shafttech"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1TXMo8mJfg/"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:nshaft386@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>© 2025 SHAFT TECH. All rights reserved. Built with ❤️ in Uganda.</p>
+    </div>
+</footer>
+
+<!-- ✅ JavaScript: Scroll video effect & WhatsApp form handler -->
+<script>
+    (function() {
+        "use strict";
+        
+        // 1. VIDEO SCROLL EFFECT
+        const video = document.getElementById('heroVideo');
+        const heroContent = document.querySelector('.hero-content');
+        if (video) {
+            window.addEventListener('scroll', function() {
+                const scrollY = window.scrollY;
+                const heroHeight = window.innerHeight;
+                if (scrollY <= heroHeight) {
+                    const progress = scrollY / heroHeight;
+                    const scale = 1 + progress * 0.3;
+                    const opacity = Math.max(0.3, 1 - progress * 0.5);
+                    const blur = Math.min(4, progress * 6);
+                    video.style.transform = `translate(-50%, -50%) scale(${scale})`;
+                    video.style.opacity = opacity;
+                    video.style.filter = `blur(${blur}px)`;
+                    if (heroContent) heroContent.style.transform = `translateY(-${progress * 40}px)`;
+                }
+            });
+        }
+        
+        // 2. WHATSAPP FORM SUBMIT
+        const form = document.getElementById('whatsappForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const project = document.getElementById('project').value.trim();
+                const message = document.getElementById('message').value.trim();
+                
+                if (!name || !email || !message) {
+                    alert('Please fill in name, email and message.');
+                    return;
+                }
+                
+                const phone = '256709835204';
+                const text = `*New Project Inquiry from SHAFT TECH Website*%0a%0a*Name:* ${encodeURIComponent(name)}%0a*Email:* ${encodeURIComponent(email)}%0a*Project Type:* ${encodeURIComponent(project || 'Not specified')}%0a*Message:* ${encodeURIComponent(message)}%0a%0aSent from SHAFT TECH contact form.`;
+                
+                window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+            });
+        }
+        
+        // 3. smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === "#" || href === "") return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    })();
+</script>
+
+<!-- ⚡ SEO microdata -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SHAFT TECH",
+  "url": "https://shafttech.ug",
+  "logo": "https://shafttech.ug/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+256709835204",
+    "contactType": "customer service",
+    "email": "nshaft386@gmail.com"
+  },
+  "sameAs": [
+    "https://www.facebook.com/share/1TXMo8mJfg/",
+    "https://www.tiktok.com/@shafttech"
+  ]
+}
+</script>
+</body>
+</html>
