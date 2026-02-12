@@ -34,6 +34,55 @@
             scroll-behavior: smooth;
             scroll-padding-top: 80px;
         }
+
+
+ /* Loading Screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(1, 1, 3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease-out;
+        }
+        
+        .loading-logo {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: white;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        
+        .loading-bar-container {
+            width: 300px;
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .loading-bar {
+            height: 100%;
+            width: 4%;
+            background-color: white;
+            transition: width 0.1s ease;
+        }
+        
+        .loading-percentage {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #fafbfc;
@@ -238,7 +287,7 @@
         }
         /* Portfolio images — each project gets distinct, relevant image (high-quality Unsplash) */
         .portfolio-img {
-            height: 200px;
+            height: 400px;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -262,9 +311,9 @@
             position: relative;
             z-index: 2;
             background: rgba(0,0,0,0.4);
-            padding: 16px;
+            padding: 1px;
             border-radius: 50%;
-            font-size: 2.5rem;
+            font-size: 0rem;
             color: white;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
@@ -522,10 +571,7 @@
             border: none;
             position: relative;
         }
-        .fab:hover {
-            transform: scale(1.15);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
+        
         /* FIXED: Brand-accurate colors, no black background except tiktok uses black bg with white icon */
         .fab-wa { background: #25D366; }  /* WhatsApp green */
         .fab-fb { background: #1877F2; }  /* Facebook blue */
@@ -585,21 +631,68 @@
         /* ---------- MOBILE RESPONSIVE ---------- */
         @media (max-width: 768px) {
             nav { flex-direction: column; gap: 12px; }
-            .nav-links a { margin: 0 12px; }
+            .nav-links a { margin: 0 1px; }
             .hero-content .btn { display: block; margin: 10px auto; width: 80%; }
             .btn-outline { margin-left: auto; }
             .contact-card { padding: 28px; }
-            .fab-container { bottom: 20px; right: 20px; gap: 12px; }
+            .fab-container { bottom: 20px; right: 10px; gap: 12px; }
             .about-stats { justify-content: space-around; }
+             .contact-btn  
+            
+              .loading-logo {
+            font-size: 1.5rem;
+            font-weight: 700;}
+           
+            .logo-img {
+                height: 30px;
+                width: auto;
+
+            }
+              .contact-btn {
+              display: inline-block;
+            background: #3b82f6;
+            color: white;
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.4rem;
+            box-shadow: 0 10px 25px -5px rgba(59, 131, 246, 0.151);
+        }
+ .fab {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+          
+           
+        }
+
+          
+    
         }
     </style>
 </head>
 <body>
 
+
+     <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-logo">SHAFT TECH</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loading-bar"></div>
+        </div>
+        <div class="loading-percentage" id="loading-percentage">0%</div>
+    </div>
+    
+
 <!-- ✅ STICKY NAVIGATION - PREMIUM (IMAGE LOGO) -->
 <nav>
     <!-- Image logo: modern tech brand, white label style on dark, we use a sleek SVG/PNG alternative -->
-    <img src="logo.jpg" alt="SHAFT TECH" class="logo-img" style="height: 50px; width: auto;">
+    <img src="logo.jpg" alt="SHAFT TECH" class="logo-img" style="height: 48px; width: auto;">
     <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#portfolio">Work</a>
@@ -637,22 +730,22 @@
     
     <div class="portfolio-grid">
         <!-- Each portfolio item has a distinct high-quality Unsplash image matching the industry, plus Font Awesome icon overlay. All live URLs from brief. -->
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&q=80');"><i class="fas fa-store"></i></div><div class="portfolio-info"><h3>Edema Stores <i class="fas fa-check-circle" style="color:#3b82f6;"></i></h3><span class="domain-badge">www.edemastores.com</span><a href="https://www.edemastores.com" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80');"><i class="fas fa-wrench"></i></div><div class="portfolio-info"><h3>Perfect Plumbing UG</h3><span class="domain-badge">www.perfectplumbingug.com</span><a href="https://www.perfectplumbingug.com" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&q=80');"><i class="fas fa-clock"></i></div><div class="portfolio-info"><h3>Jamal Classic Watches</h3><span class="domain-badge">jamalclassicwatches.store</span><a href="https://jamalclassicwatches.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80');"><i class="fas fa-couch"></i></div><div class="portfolio-info"><h3>Senono Furniture</h3><span class="domain-badge">www.ssenonofurniture.store</span><a href="https://www.ssenonofurniture.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80');"><i class="fas fa-tools"></i></div><div class="portfolio-info"><h3>Brivud Aluminium Works</h3><span class="domain-badge">brivud-aluminium-works.store</span><a href="https://brivud-aluminium-works.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&q=80');"><i class="fas fa-code"></i></div><div class="portfolio-info"><h3>DELUX BIO DIGESTER</h3><span class="domain-badge">mockup-1.github.io/DELU BIO DIGESTER</span><a href="https://mockup-1.github.io/try-this-website/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&q=80');"><i class="fas fa-tshirt"></i></div><div class="portfolio-info"><h3>Fashion Mockup</h3><span class="domain-badge">mockup-1.github.io/fashion</span><a href="https://mockup-1.github.io/fashion/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=600&q=80');"><i class="fas fa-chair"></i></div><div class="portfolio-info"><h3>Almar Furniture</h3><span class="domain-badge">almarfurniture.store</span><a href="https://almarfurniture.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('edema.jpeg');"><i class="fas fa-store"></i></div><div class="portfolio-info"><h3>Edema Stores <i class="fas fa-check-circle" style="color:#3b82f6;"></i></h3><span class="domain-badge">www.edemastores.com</span><a href="https://www.edemastores.com" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('plumbing.jpeg');"><i class="fas fa-wrench"></i></div><div class="portfolio-info"><h3>Perfect Plumbing UG</h3><span class="domain-badge">www.perfectplumbingug.com</span><a href="https://www.perfectplumbingug.com" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('watches.jpeg');"><i class="fas fa-clock"></i></div><div class="portfolio-info"><h3>Jamal Classic Watches</h3><span class="domain-badge">jamalclassicwatches.store</span><a href="https://jamalclassicwatches.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('senono.jpeg');"><i class="fas fa-couch"></i></div><div class="portfolio-info"><h3>Senono Furniture</h3><span class="domain-badge">www.ssenonofurniturecenter.store</span><a href="https://www.ssenonofurniturecenter.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('brivud.jpeg');"><i class="fas fa-tools"></i></div><div class="portfolio-info"><h3>Brivud Aluminium Works</h3><span class="domain-badge">brivud-aluminium-works.store</span><a href="https://brivud-aluminium-works.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('delux.jpeg');"><i class="fas fa-code"></i></div><div class="portfolio-info"><h3>DELUX BIO DIGESTER</h3><span class="domain-badge">mockup-1.github.io/DELU BIO DIGESTER</span><a href="https://mockup-1.github.io/try-this-website/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('kent.jpeg');"><i class="fas fa-tshirt"></i></div><div class="portfolio-info"><h3>Fashion Mockup</h3><span class="domain-badge">mockup-1.github.io/fashion</span><a href="https://mockup-1.github.io/fashion/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('almar.jpeg');"><i class="fas fa-chair"></i></div><div class="portfolio-info"><h3>Almar Furniture</h3><span class="domain-badge">almarfurniture.store</span><a href="https://almarfurniture.store/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
         <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('afrishop.jpg');"><i class="fas fa-shopping-bag"></i></div><div class="portfolio-info"><h3>Afri Shop</h3><span class="domain-badge">www.afrishop.biz</span><a href="https://www.afrishop.biz" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80');"><i class="fas fa-laptop"></i></div><div class="portfolio-info"><h3>Shaft386 TECH</h3><span class="domain-badge">shaft386.github.io/Hh</span><a href="https://shaft386.github.io/Hh/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80');"><i class="fas fa-user"></i></div><div class="portfolio-info"><h3>Client Project</h3><span class="domain-badge">shaft386.github.io/client-</span><a href="https://shaft386.github.io/client-/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&q=80');"><i class="fas fa-birthday-cake"></i></div><div class="portfolio-info"><h3>Cake Clinic</h3><span class="domain-badge">shaft386.github.io/CAKE-CLINIC</span><a href="https://shaft386.github.io/CAKE-CLINIC/#cakes" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=600&q=80');"><i class="fas fa-plug"></i></div><div class="portfolio-info"><h3>JEMA ELECTRONICS</h3><span class="domain-badge">shaft386.github.io/JEMA-ELECTRONICS</span><a href="https://shaft386.github.io/JEMA-ELECTRONICS/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80');"><i class="fas fa-cubes"></i></div><div class="portfolio-info"><h3>CCC Project</h3><span class="domain-badge">shaft386.github.io/ccc</span><a href="https://shaft386.github.io/ccc/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('cake\ ways.png');"><i class="fas fa-birthday-cake"></i></div><div class="portfolio-info"><h3>Cake Ways UG</h3><span class="domain-badge">www.cakewaysug.store</span><a href="https://www.cakewaysug.store" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
-        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80');"><i class="fas fa-home"></i></div><div class="portfolio-info"><h3>Ticbere Estates</h3><span class="domain-badge">www.ticberestates.site</span><a href="https://www.ticberestates.site" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('45.jpg');"><i class="fas fa-laptop"></i></div><div class="portfolio-info"><h3>Shaft386 TECH</h3><span class="domain-badge">shaft386.github.io/Hh</span><a href="https://shaft386.github.io/Hh/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('mimi.jpeg');"><i class="fas fa-user"></i></div><div class="portfolio-info"><h3>Client Project</h3><span class="domain-badge">shaft386.github.io/client-</span><a href="https://shaft386.github.io/client-/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('b (1).jpeg');"><i class="fas fa-birthday-cake"></i></div><div class="portfolio-info"><h3>Cake Clinic</h3><span class="domain-badge">shaft386.github.io/CAKE-CLINIC</span><a href="https://shaft386.github.io/CAKE-CLINIC/#cakes" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('jema.jpeg');"><i class="fas fa-plug"></i></div><div class="portfolio-info"><h3>JEMA ELECTRONICS</h3><span class="domain-badge">shaft386.github.io/JEMA-ELECTRONICS</span><a href="https://shaft386.github.io/JEMA-ELECTRONICS/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('menu.jpeg');"><i class="fas fa-cubes"></i></div><div class="portfolio-info"><h3>cartalogue Project</h3><span class="domain-badge">shaft386.github.io/ccc</span><a href="https://shaft386.github.io/ccc/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('cakeways.jpeg');"><i class="fas fa-birthday-cake"></i></div><div class="portfolio-info"><h3>Cake Ways UG</h3><span class="domain-badge">www.cakewaysug.store</span><a href="https://www.cakewaysug.store" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+        <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('tic.jpeg');"><i class="fas fa-home"></i></div><div class="portfolio-info"><h3>Ticbere Estates</h3><span class="domain-badge">www.ticberestates.site</span><a href="https://www.ticberestates.site" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
     </div>
 </div>
 
@@ -903,6 +996,113 @@
                 window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
             });
         }
+
+
+          
+ // Load variant WebP sequence
+        function loadVariantSequence(variantIndex) {
+            const variant = drinkVariants[variantIndex];
+            isSequenceLoading = true;
+            frameImages = [];
+            totalFramesLoaded = 0;
+            
+            // Show loading for initial load
+            if (variantIndex === 0) {
+                loadingScreen.style.display = 'flex';
+                loadingBar.style.width = '0%';
+                loadingPercentage.textContent = '0%';
+            } else {
+                // Show variant loading indicator
+                variantLoading.style.opacity = '1';
+            }
+            
+            // Load each frame in the sequence
+            for (let i = 1; i <= variant.frameCount; i++) {
+                const frameNumber = i.toString().padStart(4, '0');
+                const frameUrl = variant.sequenceUrl.replace('frame_0001', `frame_${frameNumber}`);
+                
+                // Create image element for each frame
+                const img = new Image();
+                img.onload = function() {
+                    totalFramesLoaded++;
+                    const percentLoaded = Math.round((totalFramesLoaded / variant.frameCount) * 100);
+                    
+                    // Update loading progress for initial load
+                    if (variantIndex === 0) {
+                        loadingBar.style.width = `${percentLoaded}%`;
+                        loadingPercentage.textContent = `${percentLoaded}%`;
+                    }
+                    
+                    // When all frames are loaded
+                    if (totalFramesLoaded === variant.frameCount) {
+                        // Hide loading screen for initial load
+                        if (variantIndex === 0) {
+                            setTimeout(() => {
+                                loadingScreen.style.opacity = '0';
+                                setTimeout(() => {
+                                    loadingScreen.style.display = 'none';
+                                }, 800);
+                            }, 500);
+                        } else {
+                            // Hide variant loading indicator
+                            variantLoading.style.opacity = '0';
+                        }
+                        
+                        isSequenceLoading = false;
+                        
+                        // Set the first frame as background
+                        parallaxBg.style.backgroundImage = `url('${frameImages[0].src}')`;
+                    }
+                };
+                
+                img.onerror = function() {
+                    // If frame fails to load, use placeholder
+                    img.src = `https://placehold.co/1920x1080/000000/FFFFFF/webp?text=Frame+${i}`;
+                    totalFramesLoaded++;
+                    
+                    if (totalFramesLoaded === variant.frameCount) {
+                        if (variantIndex === 0) {
+                            loadingScreen.style.opacity = '0';
+                            setTimeout(() => {
+                                loadingScreen.style.display = 'none';
+                            }, 800);
+                        }
+                        isSequenceLoading = false;
+                        parallaxBg.style.backgroundImage = `url('${frameImages[0].src}')`;
+                    }
+                };
+                
+                img.src = frameUrl;
+                frameImages.push(img);
+            }
+            
+            // Update UI with variant info
+            updateVariantInfo(variantIndex);
+        }
+        
+
+
+
+        // Simulate initial loading complete after 3 seconds (in case of slow network)
+        setTimeout(() => {
+            if (loadingScreen.style.display !== 'none') {
+                loadingBar.style.width = '100%';
+                loadingPercentage.textContent = '100%';
+                
+                setTimeout(() => {
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 800);
+                }, 500);
+            }
+        }, 3000);
+
+        const loadingScreen = document.getElementById('loading-screen');
+    
+        const loadingBar = document.getElementById('loading-bar');
+        const loadingPercentage = document.getElementById('loading-percentage');
+        
         
         // 3. smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -941,4 +1141,3 @@
 </script>
 </body>
 </html>
-
