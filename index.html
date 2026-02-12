@@ -307,6 +307,108 @@
             font-weight: 400;
         }
         
+        /* ---------- ABOUT US SECTION ---------- */
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        .about-content {
+            flex: 1 1 350px;
+        }
+        .about-stats {
+            flex: 1 1 250px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .stat-item {
+            text-align: center;
+            background: white;
+            padding: 28px 20px;
+            border-radius: 32px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            border: 1px solid #f3f4f6;
+            min-width: 160px;
+        }
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #3b82f6;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 1rem;
+            color: #4b5563;
+            margin-top: 10px;
+        }
+        /* ---------- CUSTOMER REVIEWS / TESTIMONIALS ---------- */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 28px;
+            margin-top: 30px;
+        }
+        .review-card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            border: 1px solid #f9fafb;
+            transition: all 0.2s;
+        }
+        .review-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 20px 30px -10px rgba(59,130,246,0.08);
+        }
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        .review-avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(145deg, #eef2ff, #e0e7ff);
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1e40af;
+            text-transform: uppercase;
+        }
+        .review-author h4 {
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+        .review-author p {
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+        .review-stars {
+            color: #fbbf24;
+            margin-bottom: 14px;
+            font-size: 0.9rem;
+        }
+        .review-text {
+            color: #1f2937;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .review-platform {
+            margin-top: 18px;
+            font-size: 0.8rem;
+            color: #3b82f6;
+            font-weight: 500;
+        }
+        
         /* ---------- CONTACT CARD ---------- */
         .contact-card {
             background: white;
@@ -488,6 +590,7 @@
             .btn-outline { margin-left: auto; }
             .contact-card { padding: 28px; }
             .fab-container { bottom: 20px; right: 20px; gap: 12px; }
+            .about-stats { justify-content: space-around; }
         }
     </style>
 </head>
@@ -500,6 +603,8 @@
     <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#portfolio">Work</a>
+        <a href="#about">About</a>           <!-- new about link -->
+        <a href="#reviews">Reviews</a>       <!-- new reviews link -->
         <a href="#contact" class="contact-btn">Inquiry</a>
     </div>
 </nav>
@@ -548,6 +653,142 @@
         <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80');"><i class="fas fa-cubes"></i></div><div class="portfolio-info"><h3>CCC Project</h3><span class="domain-badge">shaft386.github.io/ccc</span><a href="https://shaft386.github.io/ccc/" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
         <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('cake\ ways.png');"><i class="fas fa-birthday-cake"></i></div><div class="portfolio-info"><h3>Cake Ways UG</h3><span class="domain-badge">www.cakewaysug.store</span><a href="https://www.cakewaysug.store" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
         <div class="portfolio-item"><div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80');"><i class="fas fa-home"></i></div><div class="portfolio-info"><h3>Ticbere Estates</h3><span class="domain-badge">www.ticberestates.site</span><a href="https://www.ticberestates.site" target="_blank" class="portfolio-link">Visit live <i class="fas fa-arrow-right"></i></a></div></div>
+    </div>
+</div>
+
+<!-- ✅ ABOUT US SECTION - brand new, premium -->
+<div class="container" id="about">
+    <div style="text-align: center;">
+        <span class="badge">🚀 ABOUT SHAFT TECH</span>
+        <h2 class="section-title">We're on a mission to empower Ugandan businesses online</h2>
+        <p class="section-sub">Founded in 2023, we combine technical excellence with local insight.</p>
+    </div>
+    <div class="about-grid">
+        <div class="about-content">
+            <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 24px;">Crafting digital experiences that matter</h3>
+            <p style="font-size: 1.1rem; color: #374151; margin-bottom: 20px;">SHAFT TECH isn't just a development agency — we are your strategic partner. Based in Kampala, we’ve helped 20+ businesses from edemastores to ticberestates establish powerful web presence. We believe in clean code, human-centered design, and tangible results.</p>
+            <p style="font-size: 1.1rem; color: #374151; margin-bottom: 28px;">Every site we ship is mobile-optimized, SEO‑friendly, and lightning fast. Whether it’s e‑commerce, service showcase, or luxury brand, we treat your project like our own.</p>
+            <a href="#contact" class="btn" style="background: #1f2937; color: white;">📬 Talk to our team</a>
+        </div>
+        <div class="about-stats">
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Happy clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Delivery rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2.5s</div>
+                <div class="stat-label">Avg. load time</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ CUSTOMER REVIEWS / TESTIMONIALS - fresh new section -->
+<div class="container" id="reviews">
+    <div style="text-align: center;">
+        <span class="badge">⭐ TRUSTED BY BUSINESS OWNERS</span>
+        <h2 class="section-title">Customer reviews</h2>
+        <p class="section-sub">Real feedback from real clients — we don’t fake it.</p>
+    </div>
+    <div class="review-grid">
+        <!-- review 1 -->
+        <div class="review-card">
+            <div class="review-header">
+                <div class="review-avatar">E</div>
+                <div class="review-author">
+                    <h4>Edema Stores</h4>
+                    <p>Martin Edema, Owner</p>
+                </div>
+            </div>
+            <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">“SHAFT TECH transformed our local hardware into an e‑commerce powerhouse. Sales increased 40% within 2 months. Professional, fast and they actually listen.”</div>
+            <div class="review-platform"><i class="fab fa-google"></i> Google Review</div>
+        </div>
+        <!-- review 2 -->
+        <div class="review-card">
+            <div class="review-header">
+                <div class="review-avatar">J</div>
+                <div class="review-author">
+                    <h4>Jamal Classic Watches</h4>
+                    <p>Jamal Ssebuufu</p>
+                </div>
+            </div>
+            <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">“Finally a developer that understands luxury presentation. My watch store looks premium, loads instantly. Support is always there. Highly recommended!”</div>
+            <div class="review-platform"><i class="fab fa-facebook"></i> Facebook</div>
+        </div>
+        <!-- review 3 -->
+        <div class="review-card">
+            <div class="review-header">
+                <div class="review-avatar">P</div>
+                <div class="review-author">
+                    <h4>Perfect Plumbing UG</h4>
+                    <p>Paul Wasswa</p>
+                </div>
+            </div>
+            <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">“I needed a simple yet professional site to showcase plumbing services. They delivered beyond expectations – and even optimized for local SEO. Now I appear on first page!”</div>
+            <div class="review-platform"><i class="fab fa-google"></i> Google Review</div>
+        </div>
+        <!-- review 4 -->
+        <div class="review-card">
+            <div class="review-header">
+                <div class="review-avatar">S</div>
+                <div class="review-author">
+                    <h4>Senono Furniture</h4>
+                    <p>Esther Senono</p>
+                </div>
+            </div>
+            <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">“My furniture store needed a modern refresh. The team redesigned everything, made it mobile friendly, and added a catalog feature. My customers love it!”</div>
+            <div class="review-platform"><i class="fab fa-instagram"></i> DM review</div>
+        </div>
+        <!-- review 5 -->
+        <div class="review-card">
+            <div class="review-header">
+                <div class="review-avatar">B</div>
+                <div class="review-author">
+                    <h4>Brivud Aluminium</h4>
+                    <p>Brian Mudde</p>
+                </div>
+            </div>
+            <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="review-text">“Affordable, clear communication. They built my aluminium website exactly how I wanted. Will definitely work again.”</div>
+            <div class="review-platform"><i class="fab fa-whatsapp"></i> WhatsApp</div>
+        </div>
+        <!-- review 6 -->
+        <div class="review-card">
+            <div class="review-header">
+                <div class="review-avatar">C</div>
+                <div class="review-author">
+                    <h4>Cake Clinic</h4>
+                    <p>Grace Nakamya</p>
+                </div>
+            </div>
+            <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="review-text">“Sweet moments start here! SHAFT TECH built our cake ordering website and it’s beautiful. Orders increased and the interface is so easy to manage.”</div>
+            <div class="review-platform"><i class="fas fa-link"></i> Trustpilot</div>
+        </div>
     </div>
 </div>
 
